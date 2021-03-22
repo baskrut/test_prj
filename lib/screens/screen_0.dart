@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 
@@ -11,22 +12,25 @@ class Screen0 extends StatelessWidget {
   static const routeName = '/';
 
   @override
-  Widget build(BuildContext context) => Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _Button(
-              title: '1',
-              onTap: () => Navigator.of(context).pushNamed(Screen1.routeName),
-            ),
-            const Gap(16),
-            _Button(
-              title: '2',
-              onTap: () => Navigator.of(context).pushNamed(Screen2.routeName),
-            ),
-          ],
+  Widget build(BuildContext context) => CupertinoPageScaffold(
+    backgroundColor: ProjectColor.background,
+    child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _Button(
+                title: '1',
+                onTap: () => Navigator.of(context).pushNamed(Screen1.routeName),
+              ),
+              const Gap(16),
+              _Button(
+                title: '2',
+                onTap: () => Navigator.of(context).pushNamed(Screen2.routeName),
+              ),
+            ],
+          ),
         ),
-      );
+  );
 }
 
 class _Button extends StatelessWidget {
